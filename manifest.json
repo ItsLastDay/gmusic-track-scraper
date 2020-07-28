@@ -1,0 +1,31 @@
+{
+    "name": "Google Music title extractor",
+    "version": "1.0",
+    "description": "Extracts the current playing song title from a Google Play Music tab. Writes the title to a text file.",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "manifest_version": 2,
+
+    "content_scripts": [{
+            "matches": ["https://play.google.com/music/listen*"],
+            "run_at": "document_end",
+
+            "js": ["content.js"]
+        }
+    ],
+
+    "externally_connectable": {
+        "matches": ["*://play.google.com/music/listen*"]
+    },
+
+    "permissions": [
+        "tabs",
+        "activeTab",
+		{"fileSystem": ["write", "retainEntries", "directory"]},
+		"storage",
+		"downloads"
+    ]
+
+}
