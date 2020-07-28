@@ -1,4 +1,4 @@
-https://developer.chrome.com/extensions/content_scripts
+// https://developer.chrome.com/extensions/content_scripts
 
 
 // https://developer.chrome.com/extensions/messaging
